@@ -1,0 +1,71 @@
+trigger: none
+
+parameters:
+  - name: project
+    default: 
+  - name: repo
+    default: 
+  - name: agent
+    default: 
+  - name: build_stage
+    default: 
+  - name: buildtype
+    default: 
+  - name: deploytype
+    default: 
+  - name: artifactid
+    default: 
+  - name: platform
+    default: 
+  - name: bu
+    default:
+  - name: mem
+    default:
+  - name: timeout
+    default:
+  - name: env
+    default:
+  - name: email
+    default:
+
+stages:
+  - stage: infraestrutura
+    displayName: tfp
+    pool: agent-power-automation-emi
+    
+    jobs:
+    - job: tf
+      steps:
+      #- checkout: git://Infraestrutura/infra-core-plataforma-lambda-tf@devops-teste
+
+      # - task: replacetokens@5
+      #   displayName: Replace Token .json
+      #   inputs:
+      #     targetFiles: '**/variables.json'
+      #     encoding: 'utf-8'
+      #     tokenPattern: 'custom'
+      #     tokenPrefix: '$('
+      #     tokenSuffix: ')'
+      #     writeBOM: false
+      #     verbosity: 'detailed'
+      #     actionOnMissing: 'warn'
+      #     keepToken: false
+      #     actionOnNoFiles: 'continue'
+      #     enableTransforms: false
+      #     enableRecursion: false
+      #     useLegacyPattern: false
+      #     enableTelemetry: true
+      #     escapeType: none
+
+      - script: |
+          python3 plataform-tool.py run-decode -i $(Build.SourcesDirectory)/contratov1.tmp -o $(Build.SourcesDirectory)/contratov1.json
+          cat $(Build.SourcesDirectory)/contratov1.json
+
+      - script: |
+        
+          echo "executando script ./1-t-plan-init.sh $(env) $(bu)"
+          bash 1-t-plan-init.sh $(env) $(bu)
+
+          echo "executando comando terraform apply -auto-approve -var-file=tfvars/$(env).tfvars"
+          # terraform apply -auto-approve -var-file=tfvars/'$(env).tfvars'
+        displayName: Terraform

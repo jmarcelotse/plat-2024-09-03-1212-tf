@@ -1,0 +1,33 @@
+#Roles Multi-Env
+
+mgr:        "arn:aws:iam::262087054404:role/terraform_sts_exec"
+mgrnonprd:  "arn:aws:iam::372814006913:role/terraform_sts_exec"
+
+dev_adq:    "arn:aws:iam::224753950670:role/terraform_sts_exec"
+pdv_adq:    "arn:aws:iam::224753950670:role/terraform_sts_exec"
+hml_adq:    "arn:aws:iam::118298225980:role/terraform_sts_exec"
+act_adq:    "arn:aws:iam::602811156033:role/terraform_sts_exec"
+prd_adq:    "arn:aws:iam::109081780288:role/terraform_sts_exec"
+
+dev_emi:    "arn:aws:iam::820325568766:role/terraform_sts_exec"
+hml_emi:    "arn:aws:iam::419075463949:role/terraform_sts_exec"
+act_emi:    "arn:aws:iam::597873578426:role/terraform_sts_exec"
+fix_emi:    "arn:aws:iam::514823795473:role/terraform_sts_exec"
+prd_emi:    "arn:aws:iam::876878901355:role/terraform_sts_exec"
+
+dev_datalake: "arn:aws:iam::071971306033:role/terraform_sts_exec"
+prd_datalake: "arn:aws:iam::110403322204:role/terraform_sts_exec"
+
+#Roles Single-Env
+
+root:         "arn:aws:iam::551845086678:role/terraform_sts_exec"
+
+sgi:          "arn:aws:iam::000309837237:role/terraform_sts_exec"
+
+datalake-sbx-bn: "arn:aws:iam::016637311435:role/terraform_sts_exec"
+datalake-sbx-dc: "arn:aws:iam::961435126333:role/terraform_sts_exec"
+datalake-sbx-ec: "arn:aws:iam::077111366166:role/terraform_sts_exec"
+datalake-sbx-fi: "arn:aws:iam::529107282784:role/terraform_sts_exec"
+datalake-sbx-gt: "arn:aws:iam::953633657162:role/terraform_sts_exec"
+datalake-sbx-mk: "arn:aws:iam::982586333335:role/terraform_sts_exec"
+datalake-sbx-op: "arn:aws:iam::862017725208:role/terraform_sts_exec"

@@ -1,0 +1,113 @@
+{
+  "variables": {
+    "resources": {
+      "microservices": [],
+      "lambdaFunctions": [
+        {
+          "tags": {
+            "Name": "2024-09-03-1212",
+            "business_unit": "GESTAO_ALELO",
+            "dominio": "ADQ",
+            "squad": "Avg",
+            "projeto": "502737",
+            "conta_contabil": "-",
+            "cc": 50000001,
+            "chamado_projeto_finops": "RITM0162350"
+          },
+          "resourceName": "2024-09-03-1212",
+          "sensitiveData": false,
+          "specification": {
+            "template": "lambda-s3",
+            "git": {
+              "project": "ProjetoDeTestes",
+              "repo": "2024-09-03-1212"
+            },
+            "volumetry": {
+              "dev": 250,
+              "hml": 500,
+              "prd": 1000
+            },
+            "environmentVariables": {
+              "dev": {
+                "env": "DEV"
+              },
+              "hml": {
+                "env": "HML"
+              },
+              "prd": {
+                "env": "PRD"
+              }
+            }
+          }
+        }
+      ],
+      "s3Buckets": [
+        {
+          "tags": {
+            "Name": "2024-09-03-1212",
+            "business_unit": "GESTAO_ALELO",
+            "dominio": "ADQ",
+            "squad": "Avg",
+            "projeto": "502737",
+            "conta_contabil": "-",
+            "cc": 50000001,
+            "chamado_projeto_finops": "RITM0162350"
+          },
+          "resourceName": "2024-09-03-1212",
+          "sensitiveData": false,
+          "specification": {
+            "class": "standard",
+            "size": {
+              "dev": 1,
+              "hml": 1,
+              "prd": 5
+            },
+            "volumetry": {
+              "dev": 250,
+              "hml": 500,
+              "prd": 1000
+            },
+            "expiration": 30,
+            "trigger": {
+              "type": "invoker"
+            }
+          }
+        }
+      ],
+      "iamPermissions": [
+        {
+          "tags": {
+            "Name": "2024-09-03-1212",
+            "business_unit": "GESTAO_ALELO",
+            "dominio": "ADQ",
+            "squad": "Avg",
+            "projeto": "502737",
+            "conta_contabil": "-",
+            "cc": 50000001,
+            "chamado_projeto_finops": "RITM0162350"
+          },
+          "resourceName": "2024-09-03-1212",
+          "sensitiveData": false,
+          "specification": {
+            "class": "standard",
+            "size": {
+              "dev": 1,
+              "hml": 1,
+              "prd": 5
+            },
+            "volumetry": {
+              "dev": 250,
+              "hml": 500,
+              "prd": 1000
+            },
+            "expiration": 30,
+            "trigger": {
+              "type": "invoker"
+            }
+          }
+        }
+      ],
+      "sqsQueues": []
+    }
+  }
+}
